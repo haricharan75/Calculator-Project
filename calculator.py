@@ -1,11 +1,12 @@
-#--------before pytest --cov=. (coverage)----------(one)
+# --------before pytest --cov=. (coverage)----------(one)
 # def add(a, b):
 #     return a + b
-#-------------improve add function---------
+# -------------improve add function---------
 def add(a, b):
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise TypeError("Inputs must be numbers")
     return a + b
+
 
 def subtract(a, b):
     return a - b

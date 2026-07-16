@@ -5,9 +5,10 @@ from calculator import add, subtract, multiply, divide
 def test_add():
     assert add(10, 5) == 15
 
+
 def test_add_invalid_input():
     with pytest.raises(TypeError):
-        add("10",5)
+        add("10", 5)
 
 
 def test_subtract():
