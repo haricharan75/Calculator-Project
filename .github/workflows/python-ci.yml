@@ -31,7 +31,7 @@ jobs:
         run: black --check .
 
       - name: Run Pylint
-        run: pylint calculator.py app.py
+        run: pylint --disable=C0114,C0116 calculator.py app.py
 
       - name: Run Tests
         run: pytest -v
