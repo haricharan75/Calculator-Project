@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feature/security-demo
   pull_request:
     branches:
       - main
@@ -28,6 +29,9 @@ jobs:
 
       - name: Run Black
         run: black --check .
+
+      - name: Run Pylint
+        run: pylint calculator.py app.py
 
       - name: Run Tests
         run: pytest -v
