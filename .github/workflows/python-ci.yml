@@ -33,6 +33,9 @@ jobs:
       - name: Run Pylint
         run: pylint --disable=C0114,C0116 calculator.py app.py
 
+      - name: Run Bandit Security Scan
+        run: bandit -r .
+
       - name: Run Tests
         run: pytest -v
 
