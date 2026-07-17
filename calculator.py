@@ -20,3 +20,13 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a / b
+
+
+def power(a, b):
+    return a**b
+
+
+print(add(10.5, 5))
+print(subtract(10.5, 5))
+print(multiply(10, 5))
+print(divide(10, 5))
