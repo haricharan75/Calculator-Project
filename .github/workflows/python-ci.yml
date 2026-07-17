@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - main
+      - feature/security-demo
   pull_request:
     branches:
       - main
+permissions:
+  contents: read
 
 jobs:
   test:
@@ -28,6 +31,12 @@ jobs:
 
       - name: Run Black
         run: black --check .
+
+      - name: Run Pylint
+        run: pylint --disable=C0114,C0116 calculator.py app.py
+
+      - name: Run Bandit Security Scan
+        run: bandit -r . -x test_calculator.py
 
       - name: Run Tests
         run: pytest -v
